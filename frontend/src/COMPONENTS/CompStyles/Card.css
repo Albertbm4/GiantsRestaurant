@@ -1,0 +1,19 @@
+
+.CardStyle {
+    border: '1px';
+    width: '18rem';
+    border-color:white;
+}
+
+.CardContainer {
+    background-color:'white';
+    border-color: '#373737';
+    border-width: '5px';
+    border-radius: '5px';
+    box-shadow: '10px, 10px, 5px, grey';
+    
+}
+
+.MDBCard {
+    border-color:'black';
+}
