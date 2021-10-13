@@ -1,5 +1,6 @@
 import Carousel from "react-multi-carousel";
 import { Image } from "semantic-ui-react";
+import dataRest from '../data';
 import RestaurantCard from './Card';
 const responsive = {
   desktop: {
@@ -18,24 +19,15 @@ const responsive = {
     paritialVisibilityGutter: 30
   }
 };
-const restaurantes = [
-  "a",
-  "b",
-  "c",
-  "d",
-  "e",
-  "f",
-  "g",
-  "h",
-  "i",
-  "j",
-  "k",
-  "l"
-];
 
 // Because this is an inframe, so the SSR mode doesn't not do well here.
 // It will work on real devices.
 const SimpleCarousel = ({ deviceType }) => {
+
+
+
+console.log(dataRest[1].name)
+
   return (
     <Carousel
       ssr
@@ -43,11 +35,20 @@ const SimpleCarousel = ({ deviceType }) => {
       deviceType={deviceType}
       responsive={responsive}
     >
-      {restaurantes.slice(0, 7).map(image => { //el uso del .slice es basicamente para poder variar el numero de archivos que se acaban mapeando y poder asi hacer un carousel mas peque
-        return (
+
+      {dataRest.map((i, index) => { 
+
+console.log(dataRest[index].name);
+return (
           <div>
 
-          <RestaurantCard> </RestaurantCard>
+          <RestaurantCard 
+          name= {dataRest[index].name}
+          icon= {dataRest[index].icon}
+          rating= {dataRest[index].rating}
+          status={dataRest[index].status}
+          phone = {dataRest[index].phone}
+          > </RestaurantCard>
           
           </div>
         );
@@ -57,3 +58,4 @@ const SimpleCarousel = ({ deviceType }) => {
 };
 
 export default SimpleCarousel;
+

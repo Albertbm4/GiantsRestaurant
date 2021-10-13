@@ -10,14 +10,53 @@ const rating = {
 }
 
 
-function Status(){
+function Status(props){
+
+    if(props.status){
+        var ButtonStyleOpt = {
+
+    borderRadius: 15,
+    width: '40%',
+    marginLeft: '5%',
+    marginRight: '5%',
+    backgroundColor: 'red',
+    borderWidth: 2,
+    borderColor: 'black'
+        };
+
+        var textToShow = 'Closed'
+    
+    }else{
+        var ButtonStyleOpt = {
+
+            borderRadius: 15,
+            width: '40%',
+            marginLeft: '5%',
+            marginRight: '5%',
+            backgroundColor: 'green',
+            borderWidth: 2,
+            borderColor: 'black'
+            
+        };
+
+        var textToShow = 'Opened';
+
+        var tel = 'tel: ' + props.phone;
+    }
+
+
+console.log(props.status)
 
     return (
-        <button style = {ButtonStyle}> 
+        <a href={tel} >
+        <button style = {ButtonStyleOpt} > 
             <div style= {TypingStyle}>
-                Abierto
+            
+                {textToShow}
+                
             </div>
         </button>
+        </a>
     )
 
 }

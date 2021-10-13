@@ -15,14 +15,15 @@ const card = {
 }
 
 
-export default function App() {
+export default function Card(props) {
+console.log(props.phone)
   return (
     
     <div style= {card} border="true" border-dark="true">
-      <Foto></Foto>
-      <Titulo></Titulo>
-      <RatingButton> </RatingButton>
-      <Status></Status>
+      <Foto url = {props.icon}></Foto>
+      <Titulo name ={props.name}></Titulo>
+      <RatingButton rating = {props.rating}> </RatingButton>
+      <Status status = {props.status} phone = {props.phone}></Status>
 </div>
   );
 }
