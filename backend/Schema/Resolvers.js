@@ -1,9 +1,9 @@
 const resolvers = {
     Query: {
         getAllRestaurants: async (_, __, { dataSources }) => {
-            return dataSources.restaurantsAPI.getAllRestaurants();
+            return dataSources.restaurantAPI.getAllRestaurants();
         }
     }
 };
 
-export default resolvers;
+module.exports = resolvers;
