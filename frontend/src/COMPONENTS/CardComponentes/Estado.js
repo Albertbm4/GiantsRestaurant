@@ -9,7 +9,6 @@ const rating = {
      
 }
 
-
 function Status(props){
 
     if(props.status){
@@ -44,21 +43,15 @@ function Status(props){
         var tel = 'tel: ' + props.phone;
     }
 
-
-console.log(props.status)
-
     return (
         <a href={tel} >
         <button style = {ButtonStyleOpt} > 
             <div style= {TypingStyle}>
-            
                 {textToShow}
-                
             </div>
         </button>
         </a>
     )
-
 }
 
 
