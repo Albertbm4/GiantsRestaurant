@@ -10,8 +10,8 @@ export default function App() {
   const mapContainer = useRef(null);
   const map = useRef(null);
   const [lng, setLng] = useState(2.14);
-  const [lat, setLat] = useState(41.38);
-  const [zoom, setZoom] = useState(12);
+  const [lat, setLat] = useState(42.35);
+  const [zoom, setZoom] = useState(11);
 
   mapboxgl.accessToken = 'pk.eyJ1IjoiYWRyaWFsZW9uIiwiYSI6ImNrdXIzaDl3NzBnMWwyb2wwNXd3enN2aGgifQ.EO0AaoMf1sOhOxneYMBJBw';
 
@@ -24,10 +24,7 @@ export default function App() {
       center: [lng,lat],
       zoom: zoom
     });
-    new mapboxgl.Marker().setLngLat([2.15, 41.40]).addTo(map);
   });
-
-  
 
   return (
     
