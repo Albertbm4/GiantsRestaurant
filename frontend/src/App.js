@@ -24,11 +24,10 @@ export default function App() {
       center: [lng,lat],
       zoom: zoom
     });
+    new mapboxgl.Marker().setLngLat([2.15, 41.40]).addTo(map);
   });
 
-  const marker = new mapboxgl.Marker()
-    .setLngLat([2.15, 41.40])
-    .addTo(map);
+  
 
   return (
     
