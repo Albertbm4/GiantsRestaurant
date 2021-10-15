@@ -5,7 +5,7 @@ class RestaurantsAPI extends RESTDataSource {
     // Always call super()
     super();
     // Sets the base URL for the REST API
-    this.baseURL = 'http://localhost:8080/api/';
+    this.baseURL = '';
   }
 
   async getAllRestaurants() {
@@ -14,4 +14,4 @@ class RestaurantsAPI extends RESTDataSource {
   }
 }
 
-export default RestaurantsAPI;
+module.exports = RestaurantsAPI;

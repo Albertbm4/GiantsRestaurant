@@ -1,4 +1,4 @@
-const { gql } = require("apollo-server-express");
+const { gql } = require("apollo-server");
 
 const typeDefs = gql`
     type Restaurant {
@@ -18,4 +18,4 @@ const typeDefs = gql`
     }
 `;
 
-export default typeDefs;
+module.exports = typeDefs;
