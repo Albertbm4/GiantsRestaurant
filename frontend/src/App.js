@@ -1,44 +1,45 @@
 import './App.css';
-import RestaurantCard from './COMPONENTS/Card.js'
-import React from 'react';
+
+import React, { useRef, useEffect, useState } from 'react';
 import Simple from './COMPONENTS/carousel'
 import "react-multi-carousel/lib/styles.css";
+//const mapboxgl = require('react-mapbox-gl');
+import mapboxgl from 'mapbox-gl'; 
 
-const responsive = {
-  desktop: {
-    breakpoint: { max: 3000, min: 1024 },
-    items: 3,
-    slidesToSlide: 3 // optional, default to 1.
-  },
-  tablet: {
-    breakpoint: { max: 1024, min: 464 },
-    items: 2,
-    slidesToSlide: 2 // optional, default to 1.
-  },
-  mobile: {
-    breakpoint: { max: 464, min: 0 },
-    items: 1,
-    slidesToSlide: 1 // optional, default to 1.
-  }
-};
+export default function App() {
+  const mapContainer = useRef(null);
+  const map = useRef(null);
+  const [lng, setLng] = useState(2.14);
+  const [lat, setLat] = useState(41.38);
+  const [zoom, setZoom] = useState(12);
+
+  mapboxgl.accessToken = 'pk.eyJ1IjoiYWRyaWFsZW9uIiwiYSI6ImNrdXIzaDl3NzBnMWwyb2wwNXd3enN2aGgifQ.EO0AaoMf1sOhOxneYMBJBw';
 
 
+  useEffect(() => {
+    if (map.current) return; // initialize map only once
+    map.current = new mapboxgl.Map({
+      container: mapContainer.current,
+      style: 'mapbox://styles/mapbox/streets-v11',
+      center: [lng,lat],
+      zoom: zoom
+    });
+  });
 
+  const marker = new mapboxgl.Marker()
+    .setLngLat([2.15, 41.40])
+    .addTo(map);
 
-function App() {
   return (
-    <div className="App">
-      <header className="App-header"/>
+    
+
       <body> 
-        <Simple />  
+        <Simple /> 
+        <div ref={mapContainer} className="map-container" style={{'height': 800}}/>
+
       </body>
-    </div>
+    
   );
 }
 
-
-
-
-
-export default App;
 

@@ -16,7 +16,6 @@ const card = {
 
 
 export default function Card(props) {
-console.log(props.phone)
   return (
     
     <div style= {card} border="true" border-dark="true">
