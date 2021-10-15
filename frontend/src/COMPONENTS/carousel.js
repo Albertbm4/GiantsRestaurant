@@ -1,7 +1,9 @@
+import { useQuery } from "@apollo/client";
+import { useEffect, useState } from "react";
 import Carousel from "react-multi-carousel";
-import { Image } from "semantic-ui-react";
-import dataRest from '../data';
+import { GET_RESTAURANTS } from "../Schema/Queries";
 import RestaurantCard from './Card';
+
 const responsive = {
   desktop: {
     breakpoint: { max: 3000, min: 1024 },
@@ -24,9 +26,12 @@ const responsive = {
 // It will work on real devices.
 const SimpleCarousel = ({ deviceType }) => {
 
+  const { loading, error, data } = useQuery(GET_RESTAURANTS);
+  const [restaurants, setRestaurants] = useState([]);
 
-
-console.log(dataRest[1].name)
+  useEffect(() => {
+    if (data) setRestaurants(data.getAllRestaurants)
+  }, [data]);
 
   return (
     <Carousel
@@ -35,21 +40,16 @@ console.log(dataRest[1].name)
       deviceType={deviceType}
       responsive={responsive}
     >
-
-      {dataRest.map((i, index) => { 
-
-console.log(dataRest[index].name);
-return (
+      {restaurants.map((i, index) => { 
+        return (
           <div>
-
-          <RestaurantCard 
-          name= {dataRest[index].name}
-          icon= {dataRest[index].icon}
-          rating= {dataRest[index].rating}
-          status={dataRest[index].status}
-          phone = {dataRest[index].phone}
-          > </RestaurantCard>
-          
+            <RestaurantCard 
+            name= {restaurants[index].name}
+            icon= {restaurants[index].icon}
+            rating= {restaurants[index].rating}
+            status={restaurants[index].status}
+            phone = {restaurants[index].phone}
+            />
           </div>
         );
       })}
