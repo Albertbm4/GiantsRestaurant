@@ -1,0 +1,50 @@
+[
+  {
+    "line": 1,
+    "elements": [
+      {
+        "line": 3,
+        "name": "Data Upload to a web service",
+        "description": "",
+        "id": "testing-get-and-post.-users-should-be-able-to-submit-get-and-post-requests-to-a-web-service-represented-by-wiremock;data-upload-to-a-web-service",
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "status": "undefined"
+            },
+            "line": 4,
+            "name": "Create new restaurant service",
+            "match": {},
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "status": "undefined"
+            },
+            "line": 5,
+            "name": "Users upload data on a project",
+            "match": {},
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "status": "undefined"
+            },
+            "line": 6,
+            "name": "The server should handle it and return a success status",
+            "match": {},
+            "keyword": "Then "
+          }
+        ]
+      }
+    ],
+    "name": "Testing GET and POST. Users should be able to submit GET and POST requests to a web service,represented by WireMock",
+    "description": "",
+    "id": "testing-get-and-post.-users-should-be-able-to-submit-get-and-post-requests-to-a-web-service-represented-by-wiremock",
+    "keyword": "Feature",
+    "uri": "src/test/java/giants/training/restaurants/resources/RestaurantService.feature",
+    "tags": []
+  }
+]

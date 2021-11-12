@@ -1,5 +1,6 @@
 package giants.training.restaurants.service;
 
+import cucumber.api.java.en.When;
 import giants.training.restaurants.dao.RestaurantDao;
 import giants.training.restaurants.model.Restaurant;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,6 +18,7 @@ public class RestaurantService {
         return restaurantDao.findAll();
     }
 
+    @When("^users upload data on a project$")
     public List<Restaurant> addRestaurants(List<Restaurant> restaurants) {
         return restaurantDao.insert(restaurants);
     }
