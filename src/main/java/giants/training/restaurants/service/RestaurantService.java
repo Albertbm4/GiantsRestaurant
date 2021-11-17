@@ -18,7 +18,6 @@ public class RestaurantService {
         return restaurantDao.findAll();
     }
 
-    @When("^users upload data on a project$")
     public List<Restaurant> addRestaurants(List<Restaurant> restaurants) {
         return restaurantDao.insert(restaurants);
     }

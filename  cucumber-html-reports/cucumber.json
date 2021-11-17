@@ -12,29 +12,84 @@
         "steps": [
           {
             "result": {
-              "status": "undefined"
+              "duration": 1336682297,
+              "status": "passed"
             },
             "line": 4,
             "name": "Create new restaurant service",
-            "match": {},
+            "match": {
+              "location": "RestaurantServiceStepdefs.createNewRestaurantService()"
+            },
             "keyword": "Given "
           },
           {
             "result": {
-              "status": "undefined"
+              "duration": 51692444,
+              "status": "passed"
             },
             "line": 5,
             "name": "Users upload data on a project",
-            "match": {},
+            "match": {
+              "location": "RestaurantServiceStepdefs.usersUploadDataOnAProject()"
+            },
             "keyword": "When "
           },
           {
             "result": {
-              "status": "undefined"
+              "duration": 35942442,
+              "status": "passed"
             },
             "line": 6,
             "name": "The server should handle it and return a success status",
-            "match": {},
+            "match": {
+              "location": "RestaurantServiceStepdefs.theServerShouldHandleItAndReturnASuccessStatus()"
+            },
+            "keyword": "Then "
+          }
+        ]
+      },
+      {
+        "line": 7,
+        "name": "Data retrieval from a web service",
+        "description": "",
+        "id": "testing-get-and-post.-users-should-be-able-to-submit-get-and-post-requests-to-a-web-service-represented-by-wiremock;data-retrieval-from-a-web-service",
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 48750054,
+              "status": "passed"
+            },
+            "line": 8,
+            "name": "Create new restaurant service",
+            "match": {
+              "location": "RestaurantServiceStepdefs.createNewRestaurantService()"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 10647260,
+              "status": "passed"
+            },
+            "line": 9,
+            "name": "users want to get information",
+            "match": {
+              "location": "RestaurantServiceStepdefs.usersWantToGetInformation()"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 31856654,
+              "status": "passed"
+            },
+            "line": 10,
+            "name": "the requested data is returned",
+            "match": {
+              "location": "RestaurantServiceStepdefs.theRequestedDataIsReturned()"
+            },
             "keyword": "Then "
           }
         ]

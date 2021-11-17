@@ -4,3 +4,7 @@ Feature: Testing GET and POST. Users should be able to submit GET and POST reque
     Given Create new restaurant service
     When Users upload data on a project
     Then The server should handle it and return a success status
+  Scenario: Data retrieval from a web service
+    Given Create new restaurant service
+    When users want to get information
+    Then the requested data is returned
