@@ -13,5 +13,11 @@ query {
         icon
         rating
     }
+    getAllStars {
+        place_id
+        ponderation
+    }
+
+
 }
 `

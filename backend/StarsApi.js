@@ -1,6 +1,6 @@
 const { RESTDataSource } = require('apollo-datasource-rest');
 
-class RestaurantsAPI extends RESTDataSource {
+class StarsAPI extends RESTDataSource {
   constructor() {
     // Always call super()
     super();
@@ -8,12 +8,14 @@ class RestaurantsAPI extends RESTDataSource {
     this.baseURL = 'http://localhost:8080/api/';
   }
 
-  async getAllRestaurants() {
-    // Send a GET request to the specified endpoint
-    return this.get(`restaurants`);
+  async getAllStars(){
+  return this.get(`stars`);
   }
 
+  async getPonderationByPlaceName(place_id){
+    return this.get(`stars/?id=${place_id}`)
+  }
 
 }
 
-module.exports = RestaurantsAPI;
+module.exports = StarsAPI;

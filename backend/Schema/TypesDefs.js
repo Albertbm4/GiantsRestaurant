@@ -13,8 +13,15 @@ const typeDefs = gql`
         rating: Float!
     }
 
+    type Star {
+        place_id: String!
+        ponderation: Float!
+    }
+
     type Query {
         getAllRestaurants: [Restaurant!]!
+        getAllStars: [Star!]!
+        getPonderationByPlaceName(place_id: String!): Star!
     }
 `;
 

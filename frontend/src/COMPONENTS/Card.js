@@ -14,6 +14,7 @@ const card = {
 }
 
 export default function Card(props) {
+
   return (
     <div style= {card} border="true" border-dark="true">
       <Foto url = {props.icon}></Foto>
